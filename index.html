@@ -11,18 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio src="./src/audio/1.mp3" id="audio" autoplay loop>
+    </audio>
     <div class="container">
         <!-- Seção 1: Contador de Dias -->
         <section id="section-1" class="section active">
             <div class="content">
-                <h1 class="title">Nossa História</h1>
+                <h1 class="title">Meu amor</h1>
                 <div class="counter-container">
                     <p class="counter-label">Dias juntos</p>
                     <div class="counter-display" id="daysCounter">0</div>
-                    <p class="counter-subtitle">dias de amor e felicidade</p>
+                    <p class="counter-subtitle">Ao lado de você</p>
                 </div>
                 <div class="navigation">
-                    <button class="btn btn-primary" onclick="nextSection()">Próximo ❤️</button>
+                    <!--alem de ir para proxima sessao, dar play no audio-->
+                    <button class="btn btn-primary" onclick="nextSection(); document.getElementById('audio').play().catch(e=>console.warn(e));">Próximo ❤️</button>
                 </div>
             </div>
         </section>
@@ -52,24 +55,20 @@
                 <div class="photo-gallery">
                     <!-- SUBSTITUA AS IMAGENS ABAIXO PELAS SUAS FOTOS -->
                     <div class="photo-card">
-                        <img src="https://via.placeholder.com/300x200/FFB6C1/FF69B4?text=Foto+1" alt="Nosso primeiro encontro">
-                        <h3>Primeiro Encontro</h3>
-                        <p>O dia que mudou nossa vida</p>
+                        <img src="./src/images/1.jpeg" alt="Nossa Primeira viagem">
+                        <h3>Pro escuro da minha vida você foi um sol</h3>
                     </div>
                     <div class="photo-card">
-                        <img src="https://via.placeholder.com/300x200/DDA0DD/9370DB?text=Foto+2" alt="Viagem especial">
-                        <h3>Nossa Primeira Viagem</h3>
-                        <p>Descobrindo o mundo juntos</p>
+                        <img src="./src/images/2.jpeg" alt="Viagem especial">
+                        <h3>Nesse mar tão turbulento você foi meu farol</h3>
                     </div>
                     <div class="photo-card">
-                        <img src="https://via.placeholder.com/300x200/F0E68C/DAA520?text=Foto+3" alt="Momento especial">
-                        <h3>Momento Especial</h3>
-                        <p>Risadas que nunca esquecerei</p>
+                        <img src="./src/images/3.jpeg" alt="Momento especial">
+                        <h3>Você me trouxe um caminhão de coisas boas</h3>
                     </div>
                     <div class="photo-card">
-                        <img src="https://via.placeholder.com/300x200/98FB98/32CD32?text=Foto+4" alt="Último momento">
-                        <h3>Ontem</h3>
-                        <p>Cada dia é uma nova aventura</p>
+                        <img src="./src/images/4.jpeg" alt="Último momento">
+                        <h3>Foi minha sorte disfarçada de pessoa</h3>
                     </div>
                 </div>
                 <div class="navigation">
