@@ -1,0 +1,469 @@
+
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f0ff 0%, #ffe4e1 50%, #fff0f5 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Seções principais */
+.section {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Títulos */
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #8b5a9f;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(139, 90, 159, 0.2);
+}
+
+/* Seção 1: Contador */
+.counter-container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(139, 90, 159, 0.1);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.counter-label {
+    font-size: 1.2rem;
+    color: #8b5a9f;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.counter-display {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #d63384;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(214, 51, 132, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.counter-subtitle {
+    font-size: 1rem;
+    color: #8b5a9f;
+    opacity: 0.8;
+}
+
+/* Seção 2: Sistema Solar */
+.solar-system {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed rgba(139, 90, 159, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    /* AJUSTE A VELOCIDADE DA ÓRBITA ALTERANDO O VALOR ABAIXO (ex: 10s = mais lento, 3s = mais rápido) */
+    animation: orbit 8s linear infinite;
+}
+
+.planet {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+}
+
+.description {
+    font-style: italic;
+    color: #8b5a9f;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Seção 3: Galeria */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.photo-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(139, 90, 159, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(139, 90, 159, 0.2);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+.photo-card h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #8b5a9f;
+    padding: 1rem 1rem 0.5rem;
+}
+
+.photo-card p {
+    color: #666;
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Seção 4: Envelope */
+.envelope-container {
+    margin-bottom: 2rem;
+}
+
+.envelope {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    margin: 2rem auto;
+    cursor: pointer;
+}
+
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px solid #8b5a9f;
+    border-radius: 5px;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    border: 2px solid #8b5a9f;
+    border-bottom: none;
+    transform-origin: bottom;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    z-index: 10;
+}
+
+.letter {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 15px 35px rgba(139, 90, 159, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.letter.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.letter-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #8b5a9f;
+    margin-bottom: 1rem;
+}
+
+.letter-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    text-align: left;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    color: #d63384;
+    margin-top: 2rem;
+    text-align: right;
+}
+
+/* Seção 5: Conclusão */
+.conclusion {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 40px rgba(139, 90, 159, 0.1);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.easter-egg {
+    color: #d63384;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.easter-egg:hover {
+    background: rgba(214, 51, 132, 0.1);
+    transform: scale(1.1);
+}
+
+.final-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #d63384;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Botões */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #d63384, #8b5a9f);
+    color: white;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(214, 51, 132, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(139, 90, 159, 0.1);
+    color: #8b5a9f;
+    border: 2px solid #8b5a9f;
+}
+
+.btn-secondary:hover {
+    background: #8b5a9f;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Canvas para efeitos */
+#effectsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ffa500;
+    }
+    to {
+        text-shadow: 0 0 20px #ffa500, 0 0 30px #ffa500;
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .counter-display {
+        font-size: 3rem;
+    }
+    
+    .solar-system {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .orbit {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sun {
+        font-size: 3rem;
+    }
+    
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .content {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 10px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .counter-container,
+    .conclusion {
+        padding: 2rem 1rem;
+    }
+    
+    .letter {
+        padding: 1.5rem;
+    }
+}

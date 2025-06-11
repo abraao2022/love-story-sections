@@ -1,24 +1,134 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>love-story-sections</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História de Amor ❤️</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Seção 1: Contador de Dias -->
+        <section id="section-1" class="section active">
+            <div class="content">
+                <h1 class="title">Nossa História</h1>
+                <div class="counter-container">
+                    <p class="counter-label">Dias juntos</p>
+                    <div class="counter-display" id="daysCounter">0</div>
+                    <p class="counter-subtitle">dias de amor e felicidade</p>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-primary" onclick="nextSection()">Próximo ❤️</button>
+                </div>
+            </div>
+        </section>
 
-    <meta property="og:title" content="love-story-sections" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+        <!-- Seção 2: Planeta Orbitando -->
+        <section id="section-2" class="section">
+            <div class="content">
+                <h2 class="title">Você é Meu Universo</h2>
+                <div class="solar-system">
+                    <div class="sun">☀️</div>
+                    <div class="orbit">
+                        <div class="planet">🌍</div>
+                    </div>
+                </div>
+                <p class="description">Como planetas em órbita, gravitamos um ao outro com amor infinito</p>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevSection()">Anterior</button>
+                    <button class="btn btn-primary" onclick="nextSection()">Próximo ❤️</button>
+                </div>
+            </div>
+        </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+        <!-- Seção 3: Galeria de Fotos -->
+        <section id="section-3" class="section">
+            <div class="content">
+                <h2 class="title">Nossos Momentos</h2>
+                <div class="photo-gallery">
+                    <!-- SUBSTITUA AS IMAGENS ABAIXO PELAS SUAS FOTOS -->
+                    <div class="photo-card">
+                        <img src="https://via.placeholder.com/300x200/FFB6C1/FF69B4?text=Foto+1" alt="Nosso primeiro encontro">
+                        <h3>Primeiro Encontro</h3>
+                        <p>O dia que mudou nossa vida</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="https://via.placeholder.com/300x200/DDA0DD/9370DB?text=Foto+2" alt="Viagem especial">
+                        <h3>Nossa Primeira Viagem</h3>
+                        <p>Descobrindo o mundo juntos</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="https://via.placeholder.com/300x200/F0E68C/DAA520?text=Foto+3" alt="Momento especial">
+                        <h3>Momento Especial</h3>
+                        <p>Risadas que nunca esquecerei</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="https://via.placeholder.com/300x200/98FB98/32CD32?text=Foto+4" alt="Último momento">
+                        <h3>Ontem</h3>
+                        <p>Cada dia é uma nova aventura</p>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevSection()">Anterior</button>
+                    <button class="btn btn-primary" onclick="nextSection()">Próximo ❤️</button>
+                </div>
+            </div>
+        </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <!-- Seção 4: Envelope e Carta -->
+        <section id="section-4" class="section">
+            <div class="content">
+                <h2 class="title">Uma Carta para Você</h2>
+                <div class="envelope-container">
+                    <div class="envelope" id="envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-body"></div>
+                        <div class="heart">💌</div>
+                    </div>
+                    <button class="btn btn-primary" id="openLetter" onclick="openEnvelope()">Abrir Carta</button>
+                </div>
+                
+                <div class="letter" id="letter">
+                    <div class="letter-content">
+                        <!-- PERSONALIZE O TEXTO DA CARTA AQUI -->
+                        <h3>Meu Amor,</h3>
+                        <p>Desde que você chegou na minha vida, cada dia tem um brilho especial. Você transformou meus dias comuns em momentos extraordinários.</p>
+                        <p>Obrigado por ser minha companheira, minha melhor amiga, meu porto seguro. Com você, descobri que o amor verdadeiro existe e é ainda mais bonito do que eu imaginava.</p>
+                        <p>Que venham muitos outros dias, meses e anos ao seu lado, construindo nossa história de amor.</p>
+                        <p class="signature">Com todo meu amor,<br>Seu namorado apaixonado ❤️</p>
+                    </div>
+                </div>
+                
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevSection()">Anterior</button>
+                    <button class="btn btn-primary" onclick="nextSection()">Próximo ❤️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Conclusão com Easter Egg -->
+        <section id="section-5" class="section">
+            <div class="content">
+                <h2 class="title">Para Sempre</h2>
+                <div class="conclusion">
+                    <p class="message">Desde <span class="easter-egg" id="easterEgg">24/09</span>/2023, minha vida ganhou um novo significado.</p>
+                    <p class="message">Obrigado por ser você, por nos escolher todos os dias.</p>
+                    <p class="final-message">Te amo infinitamente! ❤️</p>
+                </div>
+                <div class="navigation">
+                    <button class="btn btn-secondary" onclick="prevSection()">Anterior</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Canvas para efeitos especiais -->
+    <canvas id="effectsCanvas"></canvas>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
